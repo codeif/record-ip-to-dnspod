@@ -74,7 +74,7 @@ excluet-ips     不记录下面的ip， 比如'127.0.0.1,172.16.0.1'
 
    auto eth0
    iface eth0 inet dhcp
-   post-up /home/ubuntu/push-ip-to-dnspod/push-ip.sh
+   post-up cd /path/record-ip-to-dnspod && python3 -m record_ip_to_dnspod.bin -c record-ip.ini
 
 .. _Token: https://support.dnspod.cn/Kb/showarticle/tsid/227
 .. _DNSPod's API: http://www.dnspod.cn/docs/index.html
