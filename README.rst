@@ -65,6 +65,16 @@ interface       只记录指定的网卡，例如: eth0
 excluet-ips     不记录下面的ip， 比如'127.0.0.1,172.16.0.1'
 ===========     ================================================================
 
+网卡启动后执行脚本
+--------------
+
+-  `网卡启动后执行脚本 <http://unix.stackexchange.com/questions/91245/execute-custom-script-when-an-interface-gets-connected>`_
+
+编辑 /etc/network/interface::
+
+   auto eth0
+   iface eth0 inet dhcp
+   post-up /home/ubuntu/push-ip-to-dnspod/push-ip.sh
 
 .. _Token: https://support.dnspod.cn/Kb/showarticle/tsid/227
 .. _DNSPod's API: http://www.dnspod.cn/docs/index.html
